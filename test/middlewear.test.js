@@ -10,11 +10,11 @@ const client = new Client({node: "http://localhost:9200"});
 describe("Web Hook MiddleWear",()=>{
 	
 	beforeEach("Creating Index For ElasticSearch",async()=>{
-		await client.create({index: "default-2019.04"})
+		await client.indices.create({index: "default-2019.04"})
 	});
 
 	afterEach("Removing Index From ElasticSearch",async()=>{
-		await client.delete({index: "default-2019.04"})
+		await client.indices.delete({index: "default-2019.04"})
 	})
 	// drop elasticsearch index
 	// create index if does exists
