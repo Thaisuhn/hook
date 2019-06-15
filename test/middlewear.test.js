@@ -3,9 +3,9 @@ const expect = chai.expect;
 const assert = chai.assert;
 const data = require("./jsonPayload");
 const {es_insert} = require("../middlewear");
-
+const ES_URL = process.env.ES_URL || "http://localhost:9200"
 const {Client} = require('@elastic/elasticsearch')
-const client = new Client({node: "http://localhost:9200"});
+const client = new Client({node: ES_URL});
 
 
 describe("Web Hook MiddleWear",()=>{

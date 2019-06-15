@@ -1,5 +1,6 @@
 const {Client} = require('@elastic/elasticsearch')
-const client = new Client({node: "http://localhost:9200"});
+const ES_URL = process.env.ES_URL || "http://localhost:9200"
+const client = new Client({node: ES_URL});
 const es_insert = async(data) =>{
 	if(data["EventId"] == null){
 		throw new RangeError("invalid datatype for data.EventId expecting string");
