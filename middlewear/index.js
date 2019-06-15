@@ -10,7 +10,7 @@ const es_insert = async(data) =>{
 			id: data["EventId"],
 			type: "log",
 			body: data,
-			refresh: true
+			refresh: process.env.DEV == "true"
 		},{ignore:409});
 	}catch(e){
 		console.log("Im Here",e);
