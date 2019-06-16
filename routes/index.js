@@ -23,5 +23,9 @@ route.post('/logs', async(req, res, next) => {
   	}
   }
 });
+
+route.get('/test', async(req, res, next) => {
+  res.send("Ok");
+}
  
 module.exports = route;
